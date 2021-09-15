@@ -1,0 +1,3 @@
+Minas Tirith,2,5,2,5
+Moria,2,10,2,10
+Minas Tirith,2,5,2,5
