@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Archivo {
+	
 	public static LinkedList<Usuario> leerArchivoUsuario(String usuariosTxt){
 		LinkedList<Usuario> usuarios = new LinkedList<Usuario>();
 
@@ -115,18 +116,66 @@ public class Archivo {
 		PrintWriter ticket = new PrintWriter(archivo);
 		
 		String nombreUsuario = usuario.getNombre();
-		String nombre = usuario.getNombreAtraccionAceptada();
+		String nombreAtraccion = usuario.getNombreAtraccionAceptada();
 		int presupuesto = usuario.getPrecioAtraccionAceptada();
 		int tiempo = usuario.getTiempoAtraccionAceptada();
 		int totalPresupuesto = usuario.getTotalDineroAtraccionesCompradas();
 		int totalTiempo = usuario.getTotalTiempoAtraccionesCompradas();
 		
-		ticket.println(nombreUsuario + "," + nombre + "," + tiempo + "," + presupuesto + "," + 
-						totalTiempo + "," + totalPresupuesto);
+		ticket.println(nombreUsuario + "," + nombreAtraccion + "," + presupuesto + "," + tiempo + "," + 
+						totalPresupuesto + "," + totalTiempo);
 	
 		//no estoy pudiendo cargar los archivos en distintas líneas,
 		//sólo me reescribe la primer línea con el último dato
 		
         ticket.close();
+	}
+	
+	public static void generarTicketDesdeArchivo(String fileName) throws IOException {
+		
+		String usuario = fileName;
+		int totalPresupuesto = 0;
+		int totalTiempo = 0;	
+		System.out.println("****** TICKET ******");
+		System.out.println("Usuario: " + usuario.substring(0, usuario.length()-4));
+		
+		
+		Scanner sc = null;
+		
+		try {
+			sc = new Scanner (new File(fileName));
+			
+			while (sc.hasNext()) {
+				String linea = sc.nextLine();
+				String compras[] = linea.split(",");		
+				
+				String nombreUsuario = compras[0];
+				String atraccionAceptada = compras[1];
+				int costoAtraccion = Integer.parseInt(compras[2]);
+				int tiempoAtraccion = Integer.parseInt(compras[3]);
+				//totalPresupuesto += Integer.parseInt(compras[4]);
+				//totalTiempo +=Integer.parseInt(compras[5]);
+				totalPresupuesto = Integer.parseInt(compras[4]);
+				totalTiempo =Integer.parseInt(compras[5]);			
+				
+	
+				System.out.println("\nAtracción elegida: \t\t\t" + compras[1]);
+				System.out.println("Precio de la atracción: \t\t\t" + compras[2]);
+				System.out.println("Tiempo de la atracción: \t\t\t" + compras[3]);					
+
+			}
+			
+			System.out.println("\nTotal del ticket: \t\t\t\t" + totalPresupuesto);
+			System.out.println("Total de horas de las atracciones compradas: \t" + totalTiempo);
+			System.out.println("\n");
+			
+		}
+
+		catch (FileNotFoundException e){
+			e.printStackTrace();
+		}
+		
+		sc.close();
+		
 	}
 }

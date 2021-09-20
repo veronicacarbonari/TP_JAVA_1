@@ -1,1 +1,1 @@
-Sam,Lothlorien,1,35,1,35
+Sam,Lothlorien,35,1,35,1

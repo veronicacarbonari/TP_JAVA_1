@@ -52,7 +52,7 @@ public class Turismo {
 									cadaUsuario.setPresupuesto(cadaAtraccion.getPrecio());
 									cadaUsuario.setTiempoDisponible(cadaAtraccion.getTiempo());
 									cadaAtraccion.setCupo();
-									cadaUsuario.aceptaSugerencia(cadaAtraccion.getAtraccion(), cadaAtraccion.getTiempo(), cadaAtraccion.getPrecio());
+									cadaUsuario.aceptaSugerencia(cadaAtraccion.getAtraccion(), cadaAtraccion.getPrecio(), cadaAtraccion.getTiempo());
 									
 									System.out.println("Compra exitosa!!!");
 									System.out.println("Saldo disponible: " + cadaUsuario.getPresupuesto());
@@ -88,7 +88,7 @@ public class Turismo {
 									cadaUsuario.setPresupuesto(cadaAtraccion2.getPrecio());
 									cadaUsuario.setTiempoDisponible(cadaAtraccion2.getTiempo());
 									cadaAtraccion2.setCupo();
-									cadaUsuario.aceptaSugerencia(cadaAtraccion2.getAtraccion(), cadaAtraccion2.getTiempo(), cadaAtraccion2.getPrecio());
+									cadaUsuario.aceptaSugerencia(cadaAtraccion2.getAtraccion(), cadaAtraccion2.getPrecio(), cadaAtraccion2.getTiempo());
 									
 									System.out.println("Compra exitosa!!!");
 									System.out.println("Saldo disponible: " + cadaUsuario.getPresupuesto());
@@ -100,72 +100,11 @@ public class Turismo {
 								
 				}
 
-/*				if (cadaAtraccion.getGusto().equals(cadaUsuario.getPreferencias())) {
-					
-					if (cadaAtraccion.getPrecio() <= cadaUsuario.getPresupuesto()) 
-						if (cadaAtraccion.getTiempo() <= cadaUsuario.getTiempoDisponible())
-							if (cadaAtraccion.getCupo()>0) {
-								
-								System.out.println("Atracción: " + cadaAtraccion.getAtraccion());
-								System.out.println("Monedas: " + cadaAtraccion.getPrecio());
-								System.out.println("Tiempo: " + cadaAtraccion.getTiempo());
-								
-								System.out.println("Desea comprarlo? (S/N)");
-								respuesta = leer.nextLine();
-								
-								if (respuesta.contentEquals("S") || respuesta.contentEquals("s")) {
-									cadaUsuario.setPresupuesto(cadaAtraccion.getPrecio());
-									cadaUsuario.setTiempoDisponible(cadaAtraccion.getTiempo());
-									cadaAtraccion.setCupo();
-									cadaUsuario.aceptaSugerencia(cadaAtraccion.getAtraccion(), cadaAtraccion.getTiempo(), cadaAtraccion.getPrecio());
-									
-									System.out.println("Compra exitosa!!!");
-									System.out.println("Saldo disponible: " + cadaUsuario.getPresupuesto());
-									System.out.println("Tiempo disponible: " + cadaUsuario.getTiempoDisponible());
-									System.out.println("");
-									Archivo.generarTicket(cadaUsuario);
-									
-								}
-								else {
-									System.out.println("");
-									System.out.println("Tenemos otra propuesta para que elijas: ");						
-								}
-								}
-				}
-				else {
-					if (cadaAtraccion.getPrecio() <= cadaUsuario.getPresupuesto()) 
-						if (cadaAtraccion.getTiempo() <= cadaUsuario.getTiempoDisponible())
-							if (cadaAtraccion.getCupo()>0) {
-								System.out.println("Atracción: " + cadaAtraccion.getAtraccion());
-								System.out.println("Monedas: " + cadaAtraccion.getPrecio());
-								System.out.println("Tiempo: " + cadaAtraccion.getTiempo());
-							
-								System.out.println("Desea comprarlo? (S/N)");
-								respuesta = leer.nextLine();
-
-								if (respuesta.contentEquals("S") || respuesta.contentEquals("s")) {
-									cadaUsuario.setPresupuesto(cadaAtraccion.getPrecio());
-									cadaUsuario.setTiempoDisponible(cadaAtraccion.getTiempo());
-									cadaAtraccion.setCupo();
-									cadaUsuario.aceptaSugerencia(cadaAtraccion.getAtraccion(), cadaAtraccion.getTiempo(), cadaAtraccion.getPrecio());
-									
-									System.out.println("Compra exitosa!!!");
-									System.out.println("Saldo disponible: " + cadaUsuario.getPresupuesto());
-									System.out.println("Tiempo disponible: " + cadaUsuario.getTiempoDisponible());
-									System.out.println("");
-									Archivo.generarTicket(cadaUsuario);
-
-								}
-								else {
-									System.out.println("");
-									System.out.println("Tenemos otra propuesta para que elijas: ");						
-								}
-							}
-				}
- */
 			}
 
-		}			 	
+			Archivo.generarTicketDesdeArchivo(cadaUsuario.getNombre() + ".txt");
+		}	
+		
 	}	
 }
 

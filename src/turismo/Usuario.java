@@ -72,7 +72,7 @@ public class Usuario {
 		return dato>0;
 	}
 
-	public void aceptaSugerencia(String nombre, int tiempo, int precio) {
+	public void aceptaSugerencia(String nombre, int precio, int tiempo) {
 		this.nombreAtraccionAceptada = nombre;
 		this.precioAtraccionAceptada = precio;		
 		this.tiempoAtraccionAceptada = tiempo;
