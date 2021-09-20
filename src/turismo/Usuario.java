@@ -11,8 +11,9 @@ public class Usuario {
     private Sugerencia sugerencia;
     
     private String nombreAtraccionAceptada;
-    private int tiempoAtraccionAceptada;
     private int precioAtraccionAceptada;
+    private int tiempoAtraccionAceptada;
+    private String tipoAtraccionAceptada;
     private int totalDineroAtraccionesCompradas;
     private int totalTiempoAtraccionesCompradas;
     
@@ -72,10 +73,11 @@ public class Usuario {
 		return dato>0;
 	}
 
-	public void aceptaSugerencia(String nombre, int precio, int tiempo) {
+	public void aceptaSugerencia(String nombre, int precio, int tiempo, String tipo) {
 		this.nombreAtraccionAceptada = nombre;
 		this.precioAtraccionAceptada = precio;		
 		this.tiempoAtraccionAceptada = tiempo;
+		this.tipoAtraccionAceptada = tipo;
 		this.totalDineroAtraccionesCompradas+=precio;
 		this.totalTiempoAtraccionesCompradas+=tiempo;
 	}
@@ -85,14 +87,17 @@ public class Usuario {
 		return nombreAtraccionAceptada;
 	}
 
-	public int getTiempoAtraccionAceptada() {
-		return tiempoAtraccionAceptada;
-	}
-
 	public int getPrecioAtraccionAceptada() {
 		return precioAtraccionAceptada;
 	}	
 
+	public int getTiempoAtraccionAceptada() {
+		return tiempoAtraccionAceptada;
+	}
+
+	public String getTipoAtraccionAceptada() {
+		return tipoAtraccionAceptada;
+	}
 	public int getTotalDineroAtraccionesCompradas() {
 		return totalDineroAtraccionesCompradas;
 	}

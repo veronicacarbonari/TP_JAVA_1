@@ -1,4 +1,0 @@
-Galadriel,Minas Tirith,5,2,5,2
-Galadriel,Lothlorien,35,1,40,3
-Galadriel,Minas Tirith,5,2,5,2
-Galadriel,Lothlorien,35,1,40,3

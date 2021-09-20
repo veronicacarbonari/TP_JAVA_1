@@ -53,11 +53,11 @@ public class Turismo {
 									respuesta = leer.nextLine().toUpperCase();
 								}
 								
-								if (respuesta.contentEquals("S")) {// || respuesta.contentEquals("s")) {
+								if (respuesta.contentEquals("S")) {
 									cadaUsuario.setPresupuesto(cadaAtraccion.getPrecio());
 									cadaUsuario.setTiempoDisponible(cadaAtraccion.getTiempo());
 									cadaAtraccion.setCupo();
-									cadaUsuario.aceptaSugerencia(cadaAtraccion.getAtraccion(), cadaAtraccion.getPrecio(), cadaAtraccion.getTiempo());
+									cadaUsuario.aceptaSugerencia(cadaAtraccion.getAtraccion(), cadaAtraccion.getPrecio(), cadaAtraccion.getTiempo(), cadaAtraccion.getTipoAtraccion());
 									
 									System.out.println("Compra exitosa!!!");
 									System.out.println("Saldo disponible: " + cadaUsuario.getPresupuesto());
@@ -94,11 +94,11 @@ public class Turismo {
 									respuesta = leer.nextLine().toUpperCase();
 								}
 								
-								if (respuesta.contentEquals("S") || respuesta.contentEquals("s")) {
+								if (respuesta.contentEquals("S")) {
 									cadaUsuario.setPresupuesto(cadaAtraccion2.getPrecio());
 									cadaUsuario.setTiempoDisponible(cadaAtraccion2.getTiempo());
 									cadaAtraccion2.setCupo();
-									cadaUsuario.aceptaSugerencia(cadaAtraccion2.getAtraccion(), cadaAtraccion2.getPrecio(), cadaAtraccion2.getTiempo());
+									cadaUsuario.aceptaSugerencia(cadaAtraccion2.getAtraccion(), cadaAtraccion2.getPrecio(), cadaAtraccion2.getTiempo(), cadaAtraccion2.getTipoAtraccion());
 									
 									System.out.println("Compra exitosa!!!");
 									System.out.println("Saldo disponible: " + cadaUsuario.getPresupuesto());
@@ -107,7 +107,10 @@ public class Turismo {
 									Archivo.generarTicket(cadaUsuario, cadaUsuario.getNombre());
 									
 								}
-								
+								else {
+									System.out.println("");
+									System.out.println("Tenemos otra propuesta para que elijas: ");						
+								}
 				}
 
 			}

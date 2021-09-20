@@ -1,4 +1,0 @@
-Gandalf,Minas Tirith,5,2,5,2
-Gandalf,Erebor,12,3,17,5
-Gandalf,Lothlorien,35,1,35,1
-Gandalf,Mordor,25,3,60,4

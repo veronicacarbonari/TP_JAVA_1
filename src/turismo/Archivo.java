@@ -58,9 +58,9 @@ public class Archivo {
 				int costo = Integer.parseInt(datos[1]);
 				int tiempo = Integer.parseInt(datos[2]);
 				int cupo = Integer.parseInt(datos[3]);
-				String gusto = datos[4];
+				String tipoAtraccion = datos[4];
 				
-				Atraccion atraccion = new Atraccion (nombre, costo, tiempo, cupo, gusto);
+				Atraccion atraccion = new Atraccion (nombre, costo, tiempo, cupo, tipoAtraccion);
 				
 				if (!atracciones.contains(atraccion)) {
 					atracciones.add(atraccion);
@@ -119,11 +119,12 @@ public class Archivo {
 		String nombreAtraccion = usuario.getNombreAtraccionAceptada();
 		int presupuesto = usuario.getPrecioAtraccionAceptada();
 		int tiempo = usuario.getTiempoAtraccionAceptada();
+		String tipoAtraccion = usuario.getTipoAtraccionAceptada();
 		int totalPresupuesto = usuario.getTotalDineroAtraccionesCompradas();
 		int totalTiempo = usuario.getTotalTiempoAtraccionesCompradas();
 		
 		ticket.println(nombreUsuario + "," + nombreAtraccion + "," + presupuesto + "," + tiempo + "," + 
-						totalPresupuesto + "," + totalTiempo);
+						tipoAtraccion + "," + totalPresupuesto + "," + totalTiempo);
 	
 		//no estoy pudiendo cargar los archivos en distintas líneas,
 		//sólo me reescribe la primer línea con el último dato
@@ -153,20 +154,22 @@ public class Archivo {
 				String atraccionAceptada = compras[1];
 				int costoAtraccion = Integer.parseInt(compras[2]);
 				int tiempoAtraccion = Integer.parseInt(compras[3]);
+				String tipoAtraccion = compras[4];
 				//totalPresupuesto += Integer.parseInt(compras[4]);
 				//totalTiempo +=Integer.parseInt(compras[5]);
-				totalPresupuesto = Integer.parseInt(compras[4]);
-				totalTiempo =Integer.parseInt(compras[5]);			
+				totalPresupuesto = Integer.parseInt(compras[5]);
+				totalTiempo =Integer.parseInt(compras[6]);			
 				
 	
-				System.out.println("\nAtracción elegida: \t\t\t" + compras[1]);
-				System.out.println("Precio de la atracción: \t\t\t" + compras[2]);
-				System.out.println("Tiempo de la atracción: \t\t\t" + compras[3]);					
+				System.out.println("\nAtracción elegida: \t\t" + compras[1]);
+				System.out.println("Precio de la atracción: \t\t" + compras[2]);
+				System.out.println("Tiempo de la atracción: \t\t" + compras[3]);					
+				System.out.println("Tipo de atracción: \t\t" + compras[4]);					
 
 			}
 			
-			System.out.println("\nTotal del ticket: \t\t\t\t" + totalPresupuesto);
-			System.out.println("Total de horas de las atracciones compradas: \t" + totalTiempo);
+			System.out.println("\nTotal del ticket: \t\t\t" + totalPresupuesto);
+			System.out.println("Total de horas: \t\t\t" + totalTiempo);
 			System.out.println("\n");
 			
 		}
