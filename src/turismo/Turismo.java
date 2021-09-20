@@ -46,9 +46,14 @@ public class Turismo {
 								System.out.println("Tipo de atracción: " + cadaAtraccion.getTipoAtraccion());
 								
 								System.out.println("Desea comprarlo? (S/N)");
-								respuesta = leer.nextLine();
+								respuesta = leer.nextLine().toUpperCase();
 								
-								if (respuesta.contentEquals("S") || respuesta.contentEquals("s")) {
+								while(!respuesta.equals("S") && !respuesta.equals("N")) {
+									System.out.println("No se reconoce " + respuesta + "como una opción válida. Intente nuevamente");
+									respuesta = leer.nextLine().toUpperCase();
+								}
+								
+								if (respuesta.contentEquals("S")) {// || respuesta.contentEquals("s")) {
 									cadaUsuario.setPresupuesto(cadaAtraccion.getPrecio());
 									cadaUsuario.setTiempoDisponible(cadaAtraccion.getTiempo());
 									cadaAtraccion.setCupo();
@@ -82,7 +87,12 @@ public class Turismo {
 								System.out.println("Tipo de atracción: " + cadaAtraccion2.getTipoAtraccion());
 								
 								System.out.println("Desea comprarlo? (S/N)");
-								respuesta = leer.nextLine();
+								respuesta = leer.nextLine().toUpperCase();
+								
+								while(!respuesta.equals("S") && !respuesta.equals("N")) {
+									System.out.println("No se reconoce " + respuesta + "como una opción válida. Intente nuevamente");
+									respuesta = leer.nextLine().toUpperCase();
+								}
 								
 								if (respuesta.contentEquals("S") || respuesta.contentEquals("s")) {
 									cadaUsuario.setPresupuesto(cadaAtraccion2.getPrecio());

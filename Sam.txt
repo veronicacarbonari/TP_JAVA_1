@@ -1,1 +1,3 @@
+Sam,La Comarca,3,6,3,6
+Sam,Moria,10,2,13,8
 Sam,Lothlorien,35,1,35,1

@@ -1,2 +1,3 @@
 Eowyn,Bosque Negro,3,4,3,4
 Eowyn,Minas Tirith,5,2,8,6
+Eowyn,Moria,10,2,10,2
