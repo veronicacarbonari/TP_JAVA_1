@@ -94,6 +94,7 @@ public class Archivo {
 			ticket.println(nombre + "," + tiempo + "," + presupuesto + "," + 
 					totalTiempo + "," + totalPresupuesto);
 			ticket.close();
+			archivo.close();
 		}
 		
 		catch (FileNotFoundException e) {
@@ -105,7 +106,6 @@ public class Archivo {
 			  // Error when writing to the file
 			  e.printStackTrace();
 			}
-		
 	}
 		
 	

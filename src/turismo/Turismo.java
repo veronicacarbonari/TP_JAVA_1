@@ -1,7 +1,6 @@
 package turismo;
 
 import java.io.IOException;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -118,6 +117,7 @@ public class Turismo {
 			Archivo.generarTicketDesdeArchivo(cadaUsuario.getNombre() + ".txt");
 		}	
 		
+		leer.close();
 	}	
 }
 
